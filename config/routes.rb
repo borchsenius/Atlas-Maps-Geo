@@ -2,7 +2,7 @@ AtlasMapsGeo::Application.routes.draw do
   resources :geo_objects
 
 
-  root :to => "catalog#index"
+  root :to => "geo_objects#index"
 
   Blacklight.add_routes(self)
   HydraHead.add_routes(self)

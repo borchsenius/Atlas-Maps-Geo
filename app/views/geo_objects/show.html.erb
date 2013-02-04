@@ -20,6 +20,8 @@
   <dd><%= link_to '' + @geo_object.title + ' i cop', @geo_object.path_to_cop %></dd>
 </dl>
 
+
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               geo_objects_path, :class => 'btn'  %>
@@ -31,3 +33,12 @@
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
 </div>
+
+
+<div>
+  <iframe class="span5" width="600px" height="300px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-22.9,33.3,54.2,70.6&amp;
+  layer=transportmap&amp;marker=<%= @geo_object.geo_lat %>,<%= @geo_object.geo_lng %>" style="border: 1px solid black"></iframe><br /><small><a href="http://www.openstreetmap.org/?lat=51.949999999999996&amp;lon=15.650000000000002&amp;zoom=3&amp;layers=T&amp;mlat=54.16243&amp;mlon=9.75586">View Larger Map</a></small>
+</div>
+</small>
+
+
