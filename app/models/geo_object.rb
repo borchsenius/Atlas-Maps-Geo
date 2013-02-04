@@ -9,5 +9,5 @@ class GeoObject < ActiveFedora::Base
     m.field "geo_lng", :string
   end
 
-  delegate_to 'descMetadata', [:description, :geo_lat, :geo_lng, :path_to_cop, :path_to_image, :publish_year, :title]
+  delegate_to 'descMetadata', [:description, :geo_lat, :geo_lng, :path_to_cop, :path_to_image, :publish_year, :title], :unique => true
 end
