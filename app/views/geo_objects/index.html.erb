@@ -1,0 +1,48 @@
+<%- model_class = GeoObject -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:publish_year) %></th>
+      <th><%= model_class.human_attribute_name(:geo_lat) %></th>
+      <th><%= model_class.human_attribute_name(:geo_lng) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:path_to_image) %></th>
+      <th><%= model_class.human_attribute_name(:path_to_cop) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @geo_objects.each do |geo_object| %>
+      <tr>
+        <td><%= link_to geo_object.id, geo_object_path(geo_object) %></td>
+        <td><%= geo_object.title %></td>
+        <td><%= geo_object.publish_year %></td>
+        <td><%= geo_object.geo_lat %></td>
+        <td><%= geo_object.geo_lng %></td>
+        <td><%= geo_object.description %></td>
+        <td><%= geo_object.path_to_image %></td>
+        <td><%= geo_object.path_to_cop %></td>
+        <td><%=l geo_object.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_geo_object_path(geo_object), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      geo_object_path(geo_object),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_geo_object_path,
+            :class => 'btn btn-primary' %>

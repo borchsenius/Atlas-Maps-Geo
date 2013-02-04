@@ -1,4 +1,7 @@
 AtlasMapsGeo::Application.routes.draw do
+  resources :geo_objects
+
+
   root :to => "catalog#index"
 
   Blacklight.add_routes(self)

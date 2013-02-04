@@ -1,0 +1,33 @@
+<%- model_class = GeoObject -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @geo_object.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:publish_year) %>:</strong></dt>
+  <dd><%= @geo_object.publish_year %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:geo_lat) %>:</strong></dt>
+  <dd><%= @geo_object.geo_lat %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:geo_lng) %>:</strong></dt>
+  <dd><%= @geo_object.geo_lng %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @geo_object.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:path_to_image) %>:</strong></dt>
+  <dd><%= @geo_object.path_to_image %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:path_to_cop) %>:</strong></dt>
+  <dd><%= @geo_object.path_to_cop %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              geo_objects_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_geo_object_path(@geo_object), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              geo_object_path(@geo_object),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
