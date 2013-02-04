@@ -4,10 +4,20 @@ class GeoObject < ActiveFedora::Base
     m.field "description", :string
     m.field "path_to_cop",:string
     m.field "path_to_image", :string
-    m.field "publish_year", :date
+    m.field "publish_year", :integer
     m.field "title", :string
     m.field "geo_lat", :string
     m.field "geo_lng", :string
+  end
+
+  def to_solr (solr_doc = {})
+    solr_doc['title_s']=self.title
+    solr_doc['description_t']=self.description
+    solr_doc['title_s']=self.title
+    solr_doc['title_s']=self.title
+    solr_doc['title_s']=self.title
+
+
   end
 
   delegate_to 'descMetadata', [:description, :geo_lat, :geo_lng, :path_to_cop, :path_to_image, :publish_year, :title], :unique => true

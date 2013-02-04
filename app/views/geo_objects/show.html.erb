@@ -13,11 +13,11 @@
   <dt><strong><%= model_class.human_attribute_name(:geo_lng) %>:</strong></dt>
   <dd><%= @geo_object.geo_lng %></dd>
   <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
-  <dd><%= @geo_object.description %></dd>
+  <dd><blockquote><%= @geo_object.description %></blockquote></dd>
   <dt><strong><%= model_class.human_attribute_name(:path_to_image) %>:</strong></dt>
-  <dd><%= @geo_object.path_to_image %></dd>
+  <dd><%= image_tag @geo_object.path_to_image %></dd>
   <dt><strong><%= model_class.human_attribute_name(:path_to_cop) %>:</strong></dt>
-  <dd><%= @geo_object.path_to_cop %></dd>
+  <dd><%= link_to '' + @geo_object.title + ' i cop', @geo_object.path_to_cop %></dd>
 </dl>
 
 <div class="form-actions">
