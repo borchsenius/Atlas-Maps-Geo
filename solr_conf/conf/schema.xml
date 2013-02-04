@@ -488,12 +488,12 @@
    -->
     <fieldtype name="geohash" class="solr.GeoHashField"/>
 
-    <fieldType name="location_rpt"   class="solr.SpatialRecursivePrefixTreeFieldType"
+    <!--fieldType name="location_rpt"   class="solr.SpatialRecursivePrefixTreeFieldType"
                spatialContextFactory="com.spatial4j.core.context.jts.JtsSpatialContextFactory"
                distErrPct="0.025"
                maxDistErr="0.000009"
                units="degrees"
-            />
+            /-->
  </types>
 
 
@@ -551,15 +551,17 @@
    <!-- format is used for facet, display, and choosing which partial to use for the show view, so it must be stored and indexed -->
    <field name="format" type="string" indexed="true" stored="true"/>
 
-   
+   <!--field name="geo"  type="location_rpt"  indexed="true" stored="true"  multiValued="true" /-->
+
+
 
    <!-- Dynamic field definitions.  If a field name is not found, dynamicFields
-        will be used if the name matches any of the patterns.
-        RESTRICTION: the glob-like pattern in the name attribute must have
-        a "*" only at the start or the end.
-        EXAMPLE:  name="*_i" will match any field ending in _i (like myid_i, z_i)
-        Longer patterns will be matched first.  if equal size patterns
-        both match, the first appearing in the schema will be used.  -->
+will be used if the name matches any of the patterns.
+RESTRICTION: the glob-like pattern in the name attribute must have
+a "*" only at the start or the end.
+EXAMPLE:  name="*_i" will match any field ending in _i (like myid_i, z_i)
+Longer patterns will be matched first.  if equal size patterns
+both match, the first appearing in the schema will be used.  -->
    <dynamicField name="*_i"  type="int"    indexed="true"  stored="true"/>
    <dynamicField name="*_s"  type="string"  indexed="true"  stored="true" multiValued="true"/>
    <dynamicField name="*_l"  type="long"   indexed="true"  stored="true"/>
@@ -601,7 +603,6 @@
         unknown fields indexed and/or stored by default --> 
    <!--dynamicField name="*" type="ignored" multiValued="true" /-->
 
-   <field name="geo"  type="location_rpt"  indexed="true" stored="true"  multiValued="true" />
 
  </fields>
 

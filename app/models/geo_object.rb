@@ -12,10 +12,11 @@ class GeoObject < ActiveFedora::Base
 
 
   def to_solr (solr_doc = {})
+    super
     solr_doc['title_t'] = self.title
-    solr_doc['geo']= "#{self.geo_lat},#{self.geo_lng}"
+    solr_doc['location_p']= "#{self.geo_lat},#{self.geo_lng}"
 
-
+    return solr_doc
   end
 
 
