@@ -1,4 +1,5 @@
 class GeoObject < ActiveFedora::Base
+  has_metadata :name=>'rightsMetadata', :type=> Hydra::Datastream::RightsMetadata
   has_metadata :name => 'descMetadata', :type => ActiveFedora::SimpleDatastream do |m|
     m.field "description", :string
     m.field "path_to_cop",:string
