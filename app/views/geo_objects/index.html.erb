@@ -13,7 +13,6 @@
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:path_to_image) %></th>
       <th><%= model_class.human_attribute_name(:path_to_cop) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -28,7 +27,6 @@
         <td><%= geo_object.description %></td>
         <td><%= geo_object.path_to_image %></td>
         <td><%= geo_object.path_to_cop %></td>
-        <td><%=l geo_object.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_geo_object_path(geo_object), :class => 'btn btn-mini' %>

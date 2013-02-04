@@ -487,6 +487,13 @@
     See http://wiki.apache.org/solr/SpatialSearch
    -->
     <fieldtype name="geohash" class="solr.GeoHashField"/>
+
+    <fieldType name="location_rpt"   class="solr.SpatialRecursivePrefixTreeFieldType"
+               spatialContextFactory="com.spatial4j.core.context.jts.JtsSpatialContextFactory"
+               distErrPct="0.025"
+               maxDistErr="0.000009"
+               units="degrees"
+            />
  </types>
 
 
@@ -593,7 +600,9 @@
         alternately, change the type="ignored" to some other type e.g. "text" if you want 
         unknown fields indexed and/or stored by default --> 
    <!--dynamicField name="*" type="ignored" multiValued="true" /-->
-   
+
+   <field name="geo"  type="location_rpt"  indexed="true" stored="true"  multiValued="true" />
+
  </fields>
 
  <!-- Field to use to determine and enforce document uniqueness. 
