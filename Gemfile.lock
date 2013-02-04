@@ -81,6 +81,7 @@ GEM
       execjs
     coffee-script-source (1.4.0)
     columnize (0.3.6)
+    commonjs (0.2.6)
     daemons (1.1.9)
     debugger (1.3.0)
       columnize (>= 0.3.1)
@@ -174,6 +175,11 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    less (2.2.2)
+      commonjs (~> 0.2.6)
+    less-rails (2.2.6)
+      actionpack (>= 3.1)
+      less (~> 2.2.0)
     libv8 (3.11.8.13)
     listen (0.7.2)
     logger (1.2.8)
@@ -311,6 +317,10 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
+    twitter-bootstrap-rails (2.2.0)
+      actionpack (>= 3.1)
+      execjs
+      railties (>= 3.1)
     tzinfo (0.3.35)
     uglifier (1.3.0)
       execjs (>= 0.3.0)
@@ -343,6 +353,8 @@ DEPENDENCIES
   hydra-head
   jettywrapper
   jquery-rails
+  less
+  less-rails
   libv8 (~> 3.11.8)
   rails (= 3.2.11)
   rb-inotify (~> 0.8.8)
@@ -352,5 +364,6 @@ DEPENDENCIES
   spork
   sqlite3
   therubyracer (= 0.11.1)
+  twitter-bootstrap-rails
   uglifier (>= 1.0.3)
   unicode
