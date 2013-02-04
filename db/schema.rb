@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130204085930) do
+ActiveRecord::Schema.define(:version => 20130201122715) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id",     :null => false
@@ -20,18 +20,6 @@ ActiveRecord::Schema.define(:version => 20130204085930) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "user_type"
-  end
-
-  create_table "geo_objects", :force => true do |t|
-    t.string   "title"
-    t.date     "publish_year"
-    t.decimal  "geo_lat"
-    t.decimal  "geo_lng"
-    t.text     "description"
-    t.string   "path_to_image"
-    t.string   "path_to_cop"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
   end
 
   create_table "searches", :force => true do |t|
