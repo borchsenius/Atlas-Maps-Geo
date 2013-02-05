@@ -28,8 +28,8 @@
         <td><%= geo_object.geo_lat %></td>
         <td><%= geo_object.geo_lng %></td>
         <td><%= geo_object.description %></td>
-        <td><%= geo_object.path_to_image %></td>
-        <td><%= geo_object.path_to_cop %></td>
+        <td><%= image_tag geo_object.path_to_image %></td>
+        <td><%= link_to geo_object.path_to_cop %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_geo_object_path(geo_object), :class => 'btn btn-mini' %>
@@ -48,12 +48,14 @@
             new_geo_object_path,
             :class => 'btn btn-primary' %>
 <hr>
-
+<div class="hero-unit">
 <iframe width="80%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
         src="http://www.openstreetmap.org/export/embed.html?bbox=12.0,55.00,10.00,45.04819&layer=mapnik" style="border: 1px solid black"></iframe>
 <br /> <small>
   <a href="http://www.openstreetmap.org/?lat=38.99434&lon=-77.03244&zoom=14&layers=M">View Larger Map</a>
 </small>
+</div>
 
 
+</body>
 
